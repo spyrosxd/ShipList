@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { STORAGE_KEY, TASKS } from "./lib/constants";
 import type { Task } from "./types/task";
+import { Analytics } from "@vercel/analytics/react";
 
 function useLocalStorageSet(key: string) {
   const [completed, setCompleted] = useState<Set<string>>(() => {
@@ -172,6 +173,8 @@ function App() {
           SpyrosXD
         </a>
       </footer>
+
+      <Analytics/>
     </main>
   );
 }
